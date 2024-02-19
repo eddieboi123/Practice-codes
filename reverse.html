@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: orange;
+            color: black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="Enter word to reverse it: ">
+    <button id="alert1">Check</button>
+    <script>
+
+        /*a function that is nested inside a function*/
+        document.getElementById("alert1").onclick = function(){//created a function that stores a data on a variable and calls out the function
+         let str1 = document.getElementById("input1").value;//the moment the "alert1" is clicked it initiatets the function that stores data on the variable "str1" that is inputed in the "input1"
+
+         function sReverse(){//The function that is created inside a function and also the function that is being called
+                for(let i = 0; i < str1.length; i++){//this function reverse the string entered by the user
+                console.log(str1[str1.length -1 - i])
+            }
+            }
+            sReverse();//calling the function
+        };
+    </script>
+</body>

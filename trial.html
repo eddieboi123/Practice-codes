@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: orange;
+            color: black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <input type="text" id="input1" placeholder="Enter word to see if isPalindrome">
+    <button id="alert1">Check</button>
+
+    <script>
+        //function nested inside the function
+        document.getElementById("alert1").onclick = function(){//function that initiates when clicked
+         let str1 = document.getElementById("input1").value;
+
+            function isPalindrome(){//a function that is declared or initialize
+                str1 = str1.toLowerCase();
+                let Tr1 = true;
+
+                for(let i = 0; i < str1.length / 2; i++)
+                if(str1[i] !== str1[str1.length - 1 - i]){
+                    Tr1 = false;
+                    break;
+                }
+
+                if(Tr1) {
+                    console.log("isPalindrome")
+                } else {
+                    console.log("isNotPalindrome")
+                }
+            }
+            isPalindrome()//The function inside the function being called to run
+        }
+
+        /*base on what i learned, creating a function inside a function when using html script tag is that even if the function is created inside the function
+        what are you really doing is just declaring the function, not actually calling it to run or work
+        in which first we create the event listener, initialize/declare the functin we will use and next call it out*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="intakes">
+        <input type="number" id="numbers">
+            <p>Input Numbers one at a time, Submit first the first value before submitting another one again, it will be counted as one value if so.</p>
+        <button type="button" id="takeInputs">Submit</button>
+    </div>
+
+
+    <div id="operand">
+        <ul>
+            <li>
+                <button id="Mop">Multiply</button>
+            </li>
+            <li>
+                <button id="Dop">Divide</button>
+            </li>
+            <li>
+                <button id="Aop">Add</button>
+            </li>
+            <li>
+                <button id="Sop">Subtract</button>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="Totality">
+        <button type="button" id="Total"></button>
+    </div>
+
+    <p>The total is: </p>
+    <p id="Final"></p>
+
+
+    <script>
+
+        let list1 = [];
+        let result;
+        let i;
+
+        document.getElementById("takeInputs").onclick = function() {
+            let val = document.getElementById("numbers").value;
+            val = Number(val)
+            list1.push(val);
+            alert("Succesfully submitted input another number")
+            return list1;
+        }
+
+        
+
+        document.getElementById("Mop").onclick = function() {
+            for(i = 0; i < list1.length / 2; i++){
+               result = list1[i-1] * list1[list1.length -1 -i+1]
+            }
+            alert(result)
+            return result;
+        }
+
+        document.getElementById("Dop").onclick = function() {
+            for(i = 0; i < list1.length / 2; i++){
+                result = list1[i-1] / list1[list1.length -1 -i+1]
+            }
+            if(list1[list1.length -1] === 0){
+                alert("Invalid input, There can't be zero in division");
+            }
+            alert(result)
+            return result;
+        }
+
+        document.getElementById("Aop").onclick = function() {
+            
+
+            for(i = 0; i < list1.length / 2; i++){
+                result = list1[i-1] + list1[list1.length -1 -i+1] 
+            }
+            alert(result)
+            return result;
+        }
+
+        document.getElementById("Sop").onclick = function() {
+            for(i = 0; i < list1.length / 2; i++){
+                result = list1[i-1] - list1[list1.length -1 -i+1]
+            }
+            alert(result)
+            return result;
+        }
+
+        
+        
+console.log(list1)
+
+    </script>
+</body>
+</html>

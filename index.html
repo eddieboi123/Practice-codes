@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <label>Simple Calculator</label>
+    
+    
+    <input type="text" id="myInput1">
+    <button type="button" id="myButton1">Enter the first number</button><br>
+<br>
+
+        <p>|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</p>
+    
+        <p>Enter the operation</p>
+
+        <p>input (1) = multiply or (2) = divide or (3) = add or (4) = subtract</p>
+
+        <p>*Note: you must first sunmit all the inputs in order to work</p>
+
+    <input type="text" id="operation">
+    <button id="operand">Submit Operation</button>
+
+<br>
+
+        <p>|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</p>
+
+    <input type="text" id="myInput2">
+    <button type="button" id="myButton2">Enter the Second number</button>
+
+        <p>|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||</p>
+
+    <button type="button" id="equal">Total</button>
+    
+    <script>
+        
+        let inputValue1, inputValue2, op;//globally declaring the variable that we will use
+
+        
+        document.getElementById("myButton1").onclick = function () {//Takes the first input
+            inputValue1 = document.getElementById("myInput1").value;
+        }
+
+        
+        document.getElementById("myButton2").onclick = function() {//Takes the second input
+            inputValue2 = document.getElementById("myInput2").value;
+    
+
+        }
+
+        document.getElementById("operand").onclick = function(){//Takes the operation you input but in a number input format
+            op = document.getElementById("operation").value;
+    
+        }
+
+
+        
+        document.getElementById("equal").onclick = function(){//it's a function that calculate the inputs you putted from first, second and the operation
+            inputValue1 = parseInt(inputValue1);
+            inputValue2 = parseInt(inputValue2);
+            op = Number(op)
+
+        if(op == 3){
+            alert(inputValue1 + inputValue2);
+        } else if(op == 4) {
+            alert(inputValue1-inputValue2);
+        } else if(op == 1){
+            alert(inputValue1 * inputValue2);
+        } else if (op == 2){
+            alert(inputValue1 / inputValue2);
+        } else {
+            alert("Try again")
+        }
+}
+
+    </script>
+</body>
+</html>
